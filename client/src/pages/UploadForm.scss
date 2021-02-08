@@ -1,0 +1,98 @@
+@import "../styles/partials/variables.scss", "../styles/partials/mixins.scss",
+	"../styles/partials/font.scss";
+
+.upload {
+	@include padding-mobile;
+	border-top: $color-border solid 2px;
+	@media (min-width: $tablet) {
+		@include padding-tablet;
+		@media (min-width: $desktop) {
+			@include padding-desktop;
+		}
+	}
+	&__header {
+		@include font-header;
+	}
+	&__video-details {
+		@include flex(row);
+		border-top: $color-border solid 2px;
+		border-bottom: $color-border solid 2px;
+		padding-bottom: 3.2rem;
+		margin-bottom: 4rem;
+	}
+}
+
+.video-thumbnail {
+	width: 34.4rem;
+	margin-right: 2.4rem;
+	&__image {
+		width: 100%;
+		max-width: 34.4rem;
+		height: 18.3rem;
+		border-radius: 4px;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+.video-captions {
+	width: 100%;
+	@media (min-width: $desktop) {
+		width: 71.2rem;
+	}
+	&__titleBox {
+		@include textbox;
+		width: 100%;
+	}
+	&__descriptionBox {
+		@include textbox;
+		height: 14.3rem;
+		padding-bottom: 9.3rem;
+		@media (min-width: $desktop) {
+			height: 9.2rem;
+			padding-bottom: 5.3rem;
+		}
+	}
+}
+
+.buttons {
+	@include flex(row, flex-end, center, wrap-reverse);
+	&__cancelBtn {
+		@include button;
+		background-color: #fff;
+		margin: auto auto;
+		&:focus-within,
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: #fff;
+		}
+		@media (min-width: 419px) {
+			margin-right: 4.8rem;
+		}
+	}
+	&__uploadBtn {
+		width: calc(38.08rem - 29vw);
+		min-width: 16rem;
+
+		@include button;
+	}
+}
+
+.links {
+	text-decoration: none;
+	color: $color-CTA-link;
+	&-submit {
+		color: #fff;
+	}
+}
+.label {
+	@include font-forms;
+	margin-top: 3.2rem;
+	width: 100%;
+	&-description {
+		@media (min-width: $desktop) {
+			margin-top: 2.4rem;
+		}
+	}
+}

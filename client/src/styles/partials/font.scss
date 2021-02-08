@@ -1,0 +1,99 @@
+//PRIMARY FONT: AVENIR
+@font-face {
+	font-family: "Avenir";
+	src: url("../../assets/_GlobalFont/AvenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf")
+			format(opentype),
+		url("../../assets/_GlobalFont/AvenirNextProLT/AlternativeFiles/Linotype-AvenirNextLTProBold.ttf")
+			format(truetype);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "Avenir";
+	src: url("../../assets/_GlobalFont/AvenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf")
+			format(opentype),
+		url("../../assets/_GlobalFont/AvenirNextProLT/AlternativeFiles/Linotype-AvenirNextLTProDemi.ttf")
+			format(truetype);
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Avenir";
+	src: url("../../assets/_GlobalFont/AvenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf")
+			format(opentype),
+		url("../../assets/_GlobalFont/AvenirNextProLT/AlternativeFiles/Linotype-AvenirNextLTProMedium.ttf")
+			format(truetype);
+	font-weight: normal;
+}
+
+@mixin font(
+	$size: 1.3rem,
+	$height: 1.8rem,
+	$weight: normal,
+	$color: $primary-color
+) {
+	font-family: "Avenir", Arial, Helvetica, sans-serif;
+	font-size: $size;
+	line-height: $height;
+	font-weight: $weight;
+	color: $color;
+}
+
+//Did not do mixin for breakpoint since it takes the same number of key strokes
+
+//FONT MIXINS:
+
+//H1
+@mixin font-header {
+	@include font(2.4rem, 3.2rem, bold);
+	margin: 3.2rem 0;
+	@content;
+	@media (min-width: $tablet) {
+		@include font(3.6rem, 4.4rem, bold);
+		margin: 4.8rem 0;
+		@content;
+	}
+}
+
+//H2
+@mixin font-subheader($color: $primary-color) {
+	@include font(1.4rem, 2.2rem, 600, $color);
+	margin: 2.4rem 0;
+	@media (min-width: $tablet) {
+		@include font(2.4rem, 3.2rem, 600, $color);
+		margin: 3.2rem 0;
+	}
+}
+
+//H3
+@mixin font-subheader2($color: $primary-color) {
+	@include font(1.3rem, 1.8rem, 600, $color);
+	margin: 0 1.5rem 2.4rem 0;
+
+	@media (min-width: $tablet) {
+		@include font(1.6rem, 2.4rem, 600, $color);
+	}
+}
+
+//H4 or Paragraph
+@mixin font-paragraph($color: $primary-color) {
+	@include font(1.3rem, 1.8rem, normal, $color);
+	margin-bottom: 1.6rem;
+}
+
+//for links and contact information on footer
+@mixin font-list {
+	@include font(1.3rem, 1.8rem, bold, $secondary-color);
+	text-decoration: none;
+	@content;
+	@media (min-width: $tablet) {
+		@include font(1.4rem, 2.2rem, bold, $secondary-color);
+		@content;
+	}
+}
+
+@mixin font-forms {
+	@include font(1.2rem, 2rem, bold, $color-form-label);
+	text-transform: uppercase;
+	line-height: 2rem;
+}

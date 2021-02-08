@@ -1,0 +1,27 @@
+@import "../../styles/partials/variables.scss",
+	"../../styles/partials/mixins.scss", "../../styles/partials/font.scss";
+
+.nextVideo {
+	@include flex(row);
+	height: 7rem;
+	width: 28.8rem;
+	margin-bottom: 2.4rem;
+	&__image {
+		width: 12rem;
+		height: 7rem;
+		object-fit: cover;
+		object-position: center;
+		margin-right: 1.6rem;
+		border-radius: 0.4rem;
+	}
+	&__details {
+		width: calc(100% - 13.6rem);
+	}
+	&__title {
+		@include font-paragraph;
+		font-weight: bold;
+	}
+	&__owner {
+		@include font-paragraph;
+	}
+}

@@ -1,0 +1,26 @@
+@import "../../styles/partials/variables.scss",
+	"../../styles/partials/mixins.scss", "../../styles/partials/font.scss";
+
+.main {
+	@media (min-width: $tablet) {
+		@include flex(row, space-between);
+	}
+	&__video {
+		width: 100vw;
+	}
+	&__video-details {
+		width: 100%;
+		@include flex;
+		@include padding-mobile;
+		@media (min-width: $tablet) {
+			@include flex(row, space-between);
+			@include padding-tablet;
+			@media (min-width: $desktop) {
+				@include padding-desktop;
+			}
+		}
+	}
+	&__nextVideos {
+		max-width: 34.4rem;
+	}
+}

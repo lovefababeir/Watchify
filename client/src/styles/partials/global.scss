@@ -1,0 +1,16 @@
+@import "./variables.scss";
+@import "./font.scss";
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: $primary-color;
+}
+
+html,
+body {
+	font-size: 62.5%;
+}

@@ -1,0 +1,49 @@
+@import "../../styles/partials/variables.scss",
+	"../../styles/partials/mixins.scss", "../../styles/partials/font.scss";
+
+.video-details {
+	width: 100%;
+	@media (min-width: $desktop) {
+		max-width: 71.2rem;
+	}
+	&__container {
+		width: 100%;
+		border-bottom: $color-border solid 2px;
+		@include flex(row, space-between);
+	}
+	&__title {
+		@include font-header;
+		width: 100%;
+	}
+}
+.posting-info {
+	@include flex($direction: row, $align: baseline);
+	&__owner {
+		@include font-subheader2;
+		font-weight: bold;
+	}
+	&__date {
+		@include font-forms;
+		margin-right: 2.4rem;
+	}
+}
+.posting-activity {
+	@include flex(row);
+	&__likes-icon,
+	&__views-icon {
+		margin-right: 0.8rem;
+	}
+	&__likes {
+		@include font-paragraph;
+	}
+	&__views {
+		@include font-paragraph;
+		margin-right: 2.4rem;
+	}
+}
+
+.video-details__description {
+	width: 100%;
+	padding: 2.4rem 0;
+	@include font-paragraph;
+}
